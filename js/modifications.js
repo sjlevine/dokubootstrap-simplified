@@ -10,7 +10,8 @@
 		$('#config__manager tr > td.label').removeClass('label');
 	
 		// add text-primariy to all header tags (h1,h2 etc) to the content
-		$('.page > :header').addClass('text-primary');
+		// $('.page > :header').addClass('text-primary');
+        $('.page > h1').addClass('page-header');
 	
 		// make edit and other submit buttons to show in bootstrap style
 		$('input[type=\"submit\"], input[type=\"reset\"]').removeClass('button');

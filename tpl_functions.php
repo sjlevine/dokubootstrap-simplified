@@ -84,12 +84,12 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $firstleve
 				 $out .= '';
 			}
 			
-        	$out .= '<li><a href="' . $href . '">'. $heading['title'] . '</a>';
+        	$out .= '<li class="list-group-item"><a href="' . $href . '">'. $heading['title'] . '</a>';
         	$li_open = true;
 
 		}else if($heading['level'] > $level) {
-        	$out .= '<ul class="nav">';
-			$out .= '<li><a href="' . $href . '">'. $heading['title'] . '</a>';
+        	$out .= '<ul class="nav list-group">';
+			$out .= '<li class="list-group-item"><a href="' . $href . '">'. $heading['title'] . '</a>';
 			$li_open = true;
 		
 		}else if($heading['level'] < $level) {
@@ -103,7 +103,7 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $firstleve
 			}
 	        	
 			$out .= '</ul>';
-			$out .= '<li><a href="' . $href . '">'. $heading['title'] . '</a>';
+			$out .= '<li class="list-group-item"><a href="' . $href . '">'. $heading['title'] . '</a>';
 		}
 		
 		$level = $heading['level'];
@@ -169,15 +169,15 @@ function _tpl_output_search_bar()
     // don't print the search form if search action has been disabled
     if(!actionOk('search')) return false;
 
-    print '<form action="'.wl().'" accept-charset="utf-8" class="search" id="dw__search" method="get"><div class="no">';
+    print '<form action="'.wl().'" accept-charset="utf-8" class="search navbar-form" id="dw__search" method="get"><div class="no">';
     print '<input type="hidden" name="do" value="search" />';
-    print '<input class="" type="text" placeholder="'.$lang['btn_search'].'" ';
+    print '<input class="form-control" type="text" placeholder="'.$lang['btn_search'].'" ';
     if($ACT == 'search') print 'value="'.htmlspecialchars($QUERY).'" ';
     if(!$autocomplete) print 'autocomplete="off" ';
     print 'id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" />';
 
-    print '<button type="submit" value="" class="btn btn-default" title="'.$lang['btn_search'].'">';
-    print '<i class="glyphicon glyphicon-search"></i></button>';
+    //print '<button type="submit" value="" class="btn btn-default" title="'.$lang['btn_search'].'">';
+    // print '<i class="glyphicon glyphicon-search"></i></button>';
 
     if($ajax) print '<div id="qsearch__out" class="ajax_qsearch JSpopup"></div>';
     print '</div></form>';

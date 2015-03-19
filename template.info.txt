@@ -1,5 +1,5 @@
 base     dokubootstrapsimplified
-author   Paul in 't Hout
+author   Paul in 't Hout (modified by Steve Levine)
 email    badeendjuh@email.com
 date     2014-09-17
 name     Bootstrap Simplified Template
